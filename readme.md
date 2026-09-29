@@ -45,16 +45,14 @@ Secure-Validator implements a zero-trust architecture for handling sensitive cli
 
 ```mermaid
 graph TD
-    A[User Interface] -->|Streamlit| B(FastAPI API)
-    B --> C{PII Redaction<br/>(Presidio)}
-    B --> D[Embedding Service<br/>(BioClinical ModernBERT)]
-    B --> E[Guardrails Service<br/>(NeMo)]
-    C --> F[PostgreSQL<br/>(pgvector)]
-    D --> F
-    E --> G[LLM Response]
-    F --> H[Clinical Context]
-    H --> C
-    H --> E
+    A["User Interface (Streamlit)"] --> B["FastAPI API"]
+    B --> D["Embedding Service (BioClinical ModernBERT)"]
+    D --> F["PostgreSQL (pgvector)"]
+    F --> H["Retrieved Clinical Context"]
+    H --> C["PII Redaction (Presidio)"]
+    C --> E["Guardrails Service (NeMo)"]
+    E --> G["LLM Response"]
+    G --> A
 ```
 
 *Note: If the architecture diagram above does not render in your viewer, see the detailed description below.*
