@@ -1,5 +1,13 @@
 # Secure-Validator: Zero-Trust Clinical RAG System
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.141.1-009688)](https://fastapi.tiangolo.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.64.0-FF4B4B)](https://streamlit.io/)
+[![PGVector](https://img.shields.io/badge/pgvector-0.3.6-4169E1)](https://github.com/pgvector/pgvector)
+[![NeMo Guardrails](https://img.shields.io/badge/NeMo%20Guardrails-0.24.1-76B900)](https://docs.nvidia.com/nemo/framework/guardrails/)
+[![Presidio](https://img.shields.io/badge/Presidio-2.2.364-0078D4)](https://github.com/microsoft/presidio)
+
 A secure, privacy-preserving clinical Retrieval-Augmented Generation (RAG) system that combines:
 - **Presidio** for PII redaction
 - **NVIDIA NeMo Guardrails** for LLM safety and medical advice compliance
@@ -21,7 +29,9 @@ A secure, privacy-preserving clinical Retrieval-Augmented Generation (RAG) syste
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
 - [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -316,11 +326,22 @@ See `k8s/` directory for sample manifests (if available).
 - Frontend logs: Streamlit terminal output
 - Consider implementing structured logging for production
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
+
 - [Microsoft Presidio](https://github.com/microsoft/presidio) for PII redaction
 - [NVIDIA NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) for LLM safety
 - [Sentence Transformers](https://www.sbert.net/) for embedding models
