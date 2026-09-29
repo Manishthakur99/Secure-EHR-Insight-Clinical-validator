@@ -47,12 +47,17 @@ graph TD
     H --> E
 ```
 
-### Components
+### Components Overview
+
+The system follows a zero-trust architecture where sensitive clinical data is protected at every stage. Data flows from the user interface through multiple security layers before reaching the LLM, ensuring PII is never exposed in raw form.
+
+### Detailed Component Description
 
 1. **Frontend** (`src/ui/app.py`)
    - Streamlit-based UI for patient selection and chat
    - Secure patient context enforcement via API
    - Automatic disclaimer on AI-generated responses
+   - Handles user authentication and session management
 
 2. **Backend API** (`src/api/main.py`)
    - FastAPI application with three endpoints:
@@ -60,25 +65,38 @@ graph TD
      - `/api/v1/chat` - Production chat with pgvector search
      - `/api/v1/patients` - Fetch patients with embeddings
    - Startup loading of heavy ML models (Presidio, Guardrails, Embedder)
+   - Implements request/response logging and error handling
+   - Provides CORS middleware and security headers
 
 3. **PII Redaction Service** (`src/pii_redaction/presidio_service.py`)
    - Wraps Microsoft Presidio for clinical text de-identification
-   - Customizable for healthcare-specific entities
+   - Customizable for healthcare-specific entities (MRN, ICD codes, etc.)
+   - Supports both anonymization and pseudonymization modes
+   - Includes confidence scoring for redaction accuracy
 
 4. **Vector Database**
    - PostgreSQL with pgvector extension
    - Stores clinical embeddings alongside structured data
-   - Enables efficient similarity search
+   - Enables efficient similarity search with IVFFlat and HNSW indexes
+   - Connection pooling for high-concurrency scenarios
+   - Automated backup and point-in-time recovery capabilities
 
 5. **Embedding Model**
    - `NeuML/bioclinical-modernbert-base-embeddings`
    - 768-dimensional BioClinical ModernBERT
    - Loaded once at startup for efficiency
+   - Optimized for clinical text understanding
+   - Supports batch processing for improved throughput
 
 6. **Guardrails**
    - NVIDIA NeMo Guardrails with RailsConfig
    - Prevents hallucinations and unsafe medical advice
    - Configured via `./src/guardrails`
+   - Includes rails for:
+     - Input validation (clinical relevance)
+     - Response factuality checking
+     - Disclaimer enforcement
+     - Toxicity and bias detection
 
 ## Key Features
 
