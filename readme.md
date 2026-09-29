@@ -47,6 +47,8 @@ graph TD
     H --> E
 ```
 
+*Note: If the architecture diagram above does not render in your viewer, see the detailed description below.*
+
 ### Components Overview
 
 The system follows a zero-trust architecture where sensitive clinical data is protected at every stage. Data flows from the user interface through multiple security layers before reaching the LLM, ensuring PII is never exposed in raw form.
