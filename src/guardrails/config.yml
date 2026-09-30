@@ -1,16 +1,10 @@
 models:
   - type: main
     engine: openai
-    model: qwen/qwen3.8-27b
+    model: deepseek-chat
     parameters:
-      base_url: "https://api.groq.com/openai/v1"
-
+      base_url: "https://api.deepseek.com/v1"
+    
   - type: embeddings
     engine: SentenceTransformers
     model: NeuML/bioclinical-modernbert-base-embeddings
-
-rails:
-  dialog:
-    user_messages:
-      embeddings_only: True
-      embeddings_only_similarity_threshold: 0.6
