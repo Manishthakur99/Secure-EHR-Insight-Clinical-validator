@@ -4,11 +4,6 @@ define user ask for medical advice
   "Should I increase the patient's dosage?"
   "Diagnose my symptoms based on this chart."
   "Recommend a drug for fluid retention."
-  "Is it safe to double the dose?"
-  "Which drug should I switch the patient to?"
-  "Do you think we should adjust the medication?"
-  "What treatment do you recommend?"
-  "Should we stop this medication?"
 
 define user ask about patient history
   "What was the patient's last recorded dosage?"
@@ -23,10 +18,3 @@ define bot refuse medical advice
 define flow prevent medical advice
   user ask for medical advice
   bot refuse medical advice
-
-define bot answer patient history
-  "Retrieving the patient's recorded history from the EHR database."
-
-define flow answer patient history
-  user ask about patient history
-  bot answer patient history
