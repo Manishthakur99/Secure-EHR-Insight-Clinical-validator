@@ -628,3 +628,16 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for d
 - **[NeuML BioClinical ModernBERT](https://huggingface.co/NeuML/bioclinical-modernbert-base-embeddings)**: State-of-the-art biomedical representation models.
 - **[pgvector](https://github.com/pgvector/pgvector)**: Open-source vector similarity search for PostgreSQL.
 - **[FastAPI](https://fastapi.tiangolo.com/)** & **[Streamlit](https://streamlit.io/)**: Modern, high-performance web and interface frameworks.
+
+---
+
+## Author & Maintainer
+
+**Manish Thakur**
+- GitHub: [@Manishthakur99](https://github.com/Manishthakur99)
+- Email: [thakurify@gmail.com](mailto:thakurify@gmail.com)
+- Project Repository: [Secure-EHR-Insight-Clinical-validator](https://github.com/Manishthakur99/Secure-EHR-Insight-Clinical-validator)
+
+---
+*Built with 🔒 for secure, privacy-preserving, and responsible AI in healthcare.*
+
