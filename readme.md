@@ -1,4 +1,4 @@
- Secure-Validator: Zero-Trust Clinical RAG & Policy Enforcement Engine
+# Secure-Validator: Zero-Trust Clinical RAG & Policy Enforcement Engine
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
